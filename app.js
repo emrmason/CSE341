@@ -4,6 +4,7 @@ const app = express();
 
 
 app.use('/', require('./routes'));
+
 // MOVED TO ..routes/index.js
 // const router = express.Router();
 
@@ -22,3 +23,5 @@ app.listen(process.env.PORT || 3000, ()=> {
     // }
 })
 
+
+// process.env.PORT || 3000 CAN be assigned to a constant of "port", might be better in the long run... 

@@ -1,9 +1,20 @@
 const routes = require('express').Router();
 
+const controller = require('../controllers');
+
+// moved to controllers index.js
+// const name1 = (req, res, next) => {
+//     res.send("Ronald Weasley");
+// };
+
 // this is the route
-routes.get('/', (req, res, next)=>{
-    res.send("Ronald Weasley");
-});
+
+routes.get('/', controller.name1);
+
+routes.get('/second', controller.name2);
+// routes.get('/', (req, res, next)=>{
+//     res.send("Ronald Weasley");
+// });
 
 module.exports = routes;
 
@@ -15,3 +26,6 @@ module.exports = routes;
 // In Node.js, any JavaScript file can act as a module, and you can export functionality from one file 
 // to be used in another. The key is to use the module.exports or exports object to expose the parts of your 
 // code that you want to make available to other modules.
+
+// res.send("blah") vs. res.json("blah"): .send can handle lots of different types of data (more versatile), .json stringifies 
+// a JS object into JSON (`Content-Type` needs to be explicitly set for JSON responses). 
