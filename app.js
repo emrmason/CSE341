@@ -2,7 +2,6 @@
 const express = require("express");
 const app = express();
 
-
 app.use('/', require('./routes'));
 
 // MOVED TO ..routes/index.js
