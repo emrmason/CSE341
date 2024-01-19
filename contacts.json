@@ -1,0 +1,37 @@
+{
+    "contact1": {
+        "firstName": "Emily",
+        "lastName": "Blodgett",
+        "email": "e.blodgett@yahoo.com",
+        "favoriteColor": "orange",
+        "birthday": "April 24"
+    },
+    "contact 2": {
+        "firstName": "Emily",
+        "lastName": "McGinnis",
+        "email": "mlespreschool@gmail.com",
+        "favoriteColor": "blue",
+        "birthday": "April 29"
+    },
+    "contact 3": {
+        "firstName": "Emily",
+        "lastName": "Wolfe",
+        "email": "wolfepack@gmail.com",
+        "favoriteColor": "turquoise",
+        "birthday": "May 17"
+    },
+    "contact 4": {
+        "firstName": "Emily",
+        "lastName": "Dethrow",
+        "email": "edeth36@gmail.com",
+        "favoriteColor": "lavendar",
+        "birthday": "October 14"
+    },
+    "contact 5": {
+        "firstName": "Emily",
+        "lastName": "Schwartz",
+        "email": "eschwartz87@live.com",
+        "favoriteColor": "pink",
+        "birthday": "January 2"
+    }
+}

@@ -3,7 +3,7 @@ const routes = require('express').Router();
 const controller = require('../controllers');
 
 // this is the route
-
+// routes.get('/contacts', require('./contacts.js'));
 // routes.get('/', controller.name1);
 
 // routes.get('/second', controller.name2);
@@ -11,7 +11,6 @@ const controller = require('../controllers');
 routes.get('/connectDB', async (req, res) => {
     try {
         await controller.connectDB();
-        res.send("Database connected successfully!");
     } catch(error){
         console.log(error); 
     }
