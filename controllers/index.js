@@ -13,6 +13,7 @@ const connectDB = async () => {
     try {
        await client.connect(); 
        console.log("DB connected!")
+       await listDatabases(client);
     } catch (error) {
         console.log(error);
     } finally {
@@ -20,4 +21,9 @@ const connectDB = async () => {
     }    
 };
 
-module.exports = { connectDB };
+async function listDatabases(client){
+    const databaseslist = await client.db().admin().listDatabases();
+    console.log("databases:");
+}
+
+module.exports = { connectDB, listDatabases };
