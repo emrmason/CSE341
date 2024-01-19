@@ -2,19 +2,22 @@ const routes = require('express').Router();
 
 const controller = require('../controllers');
 
-// moved to controllers index.js
-// const name1 = (req, res, next) => {
-//     res.send("Ronald Weasley");
-// };
-
 // this is the route
 
-routes.get('/', controller.name1);
+// routes.get('/', controller.name1);
 
-routes.get('/second', controller.name2);
-// routes.get('/', (req, res, next)=>{
-//     res.send("Ronald Weasley");
-// });
+// routes.get('/second', controller.name2);
+
+routes.get('/connectDB', async (req, res) => {
+    try {
+        await controller.connectDB();
+        res.send("Database connected successfully!");
+    } catch(error){
+        console.log(error); 
+    }
+});
+
+// notes from AI: need to call connectDB() as a FUNCTION, can't use it as a plain route... 
 
 module.exports = routes;
 

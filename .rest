@@ -2,7 +2,7 @@ GET http://localhost:3000 HTTP/1.1
 
 ###
 
-GET http://localhost:3000/second HTTP/1.1
+# GET http://localhost:3000/second HTTP/1.1
 
 ###
 GET https://cse341-75b7.onrender.com HTTP/1.1

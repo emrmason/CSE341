@@ -1,27 +1,23 @@
-const name1 = (req, res, next) => {
-    res.send("Ronald Weasley");
-};
+// const name1 = (req, res, next) => {
+//     res.send("Josh Mason");
+// };
 
-const name2 = (req, res, next) => {
-    res.send("The boy who lived");
-};
-
+// const name2 = (req, res, next) => {
+//     res.send("Mitchell Mason");
+// };
 const { MongoClient } = require("mongodb");
-// const username = encodeURIComponent("emasoncse341");
-// const password = encodeURIComponent("thisismylongpassword");
 
-async function main() {
-    const uri = process.env.DATABASE_URL;
-    const client = new MongoClient(uri);
+const connectDB = async () => {
+    const URI = process.env.DB_URL;
+    const client = new MongoClient(URI);
     try {
-        await client.connect();
-        await listDatabases(client);
+       await client.connect(); 
+       console.log("DB connected!")
     } catch (error) {
-        console.error(error);
+        console.log(error);
     } finally {
         await client.close();
-    }
-
+    }    
 };
 
-module.exports = { name1, name2, main };
+module.exports = { connectDB };
