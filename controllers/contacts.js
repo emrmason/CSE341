@@ -1,5 +1,5 @@
 const mongodb = require("../connectDB/connection");
-const { ObjectID } = require('mongodb');
+const ObjectID = require('mongodb').ObjectId;
 
 const listContacts = async(req, res, next) => {
     try {
@@ -18,13 +18,13 @@ const listContacts = async(req, res, next) => {
     }
 }
 
-const singleContact = async(req, res, next) => {
+const singleContact = ('/:contacts', async(req, res, next) => {
     try{
-        const userID = ObjectID(req.params.id);
+        const userID = new ObjectID(req.params._id);
         const client = await mongodb.connectDB();
         const collection = client.db("Test").collection("Contacts");
         const result = await collection.find({_id: userID}).toArray();
-        if(result.length > 0){
+        if(result){
             console.log(result[0]);
             res.send(result[0]);
         } else {
@@ -34,6 +34,6 @@ const singleContact = async(req, res, next) => {
         console.error(error);
         next(error);
     }    
-}
+});
 
 module.exports = { listContacts, singleContact }
