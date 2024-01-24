@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const controller = require('../controllers');
+const controller = require('../controllers/index');
 
 //router.use('/', controller.name1);
 
-router.use('/contacts', require('./contacts'));
+router.get('/', controller.name1);
 
-module.exports = router;
+// module.exports = router;
 

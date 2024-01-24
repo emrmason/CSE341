@@ -3,6 +3,6 @@ const contactsController = require("../controllers/contacts");
 
 router.get('/', contactsController.listContacts);
 
-router.get('/:id', contactsController.singleContact);   
+router.get('/single/:id', contactsController.singleContact);   
 
 module.exports = router;

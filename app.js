@@ -7,7 +7,7 @@ require('dotenv').config();
 
 app.use(bodyParser.json());
 
-app.use('/', require('./routes'));
+app.use('/', require('./routes/contacts'));
 
 app.listen(port, ()=> {
         console.log(`Server is running on port ${port}... Nothing to see here, move along.`);

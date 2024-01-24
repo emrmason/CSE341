@@ -6,6 +6,4 @@ const name2 = (req, res, next) => {
     res.send("Mitchell Mason");
 };
 
-
-
-module.exports = { name1, name2 };
+// module.exports = { name1, name2 };
