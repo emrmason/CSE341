@@ -14,16 +14,16 @@ GET http://localhost:3000/single/65ac445267f83bcdf258fff9 HTTP/1.1
 ###
 
 
-GET https://cse341-75b7.onrender.com/contacts HTTP/1.1
+GET https://cse341-75b7.onrender.com HTTP/1.1
 ###
 
-GET https://cse341-75b7.onrender.com/contacts/65ac445267f83bcdf258fff6 HTTP/1.1
+GET https://cse341-75b7.onrender.com/65ac445267f83bcdf258fff6 HTTP/1.1
 ###
 
-GET https://cse341-75b7.onrender.com/contacts/65ac445267f83bcdf258fff7 HTTP/1.1
+GET https://cse341-75b7.onrender.com/single/65ac445267f83bcdf258fff7 HTTP/1.1
 ###
 
-GET https://cse341-75b7.onrender.com/contacts/65ac445267f83bcdf258fff9 HTTP/1.1
+GET https://cse341-75b7.onrender.com/single/65ac445267f83bcdf258fff9 HTTP/1.1
 
 ###
 POST http://localhost:3000/newContact HTTP/1.1
