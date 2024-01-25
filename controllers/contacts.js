@@ -1,3 +1,4 @@
+const { response } = require("express");
 const mongodb = require("../connectDB/connection");
 const ObjectID = require('mongodb').ObjectId;
 
@@ -36,4 +37,42 @@ const singleContact = ('/:contacts', async(req, res, next) => {
     }    
 });
 
-module.exports = { listContacts, singleContact }
+const newContact = async(req, res, next) => {
+    const client = await mongodb.connectDB();
+    let newUser =     {
+        "firstName": "Jack",
+        "lastName": "Skellington",
+        "email": "jskell@gmail.com",
+        "favoriteColor": "black",
+        "birthday": "October 31"
+    }
+    try{
+        const collection = client.db("Test").collection("Contacts");
+        const result = await collection.insertOne(newUser);
+        console.log(`Insterted contact with _id: ${result._id}`);
+
+    } catch(error) {
+        console.error("Error: ", error);
+        
+    } finally {
+        await client.close();
+        console.log("Connection closed, sucka.")
+    }
+}
+
+// const updateContact = async(req, res, next) =>{
+//     const client = await mongodb.connectDB();
+
+//     try {
+//         const collection = client.db("Test").collection("Contacts");
+//         const userID = new ObjectID(req.params.id);
+//         console.log("Roger Roger.");
+//     } catch (error) {
+//         console.log("Error: ", error);
+//     } finally {
+//         client.close();
+//         console.log("Connection closed, sucka.")
+//     }
+// }
+
+module.exports = { listContacts, singleContact, newContact }

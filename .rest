@@ -25,3 +25,8 @@ GET https://cse341-75b7.onrender.com/contacts/65ac445267f83bcdf258fff7 HTTP/1.1
 
 GET https://cse341-75b7.onrender.com/contacts/65ac445267f83bcdf258fff9 HTTP/1.1
 
+###
+POST http://localhost:3000/newContact HTTP/1.1
+
+###
+PUT http://localhost:3000/updateContact HTTP/1.1
