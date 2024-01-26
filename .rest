@@ -64,15 +64,15 @@ content-type: application/json
 
 ### RENDER UPDATE a single contact
 PUT https://cse341-75b7.onrender.com/updateContact/65b44347544444f255e6e0d5 HTTP/1.1
-content-type: application/json
+# content-type: application/json
 
-{
-    "firstName": "Emily",
-    "lastName": "FancyPants",
-    "email": "eschwartz87@live.com",
-    "favoriteColor": "orange",
-    "birthday": "January 2"
-}
+# {
+#     "firstName": "Emily",
+#     "lastName": "FancyPants",
+#     "email": "eschwartz87@live.com",
+#     "favoriteColor": "orange",
+#     "birthday": "January 2"
+# }
 
 ### RENDER DELETE a single contact
 DELETE https://cse341-75b7.onrender.com/deleteContact/65b43eaaee7f36c63edf9945 HTTP/1.1 
