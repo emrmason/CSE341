@@ -39,17 +39,17 @@ const singleContact = ('/:contacts', async(req, res, next) => {
 
 const newContact = async(req, res) => {
     const client = await mongodb.connectDB();
-    let newUser =     {
-        "firstName": "Jack",
-        "lastName": "Skellington",
-        "email": "jskell@gmail.com",
-        "favoriteColor": "black",
-        "birthday": "October 31"
+    const newUser =     {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        favoriteColor: req.body.favoriteColor,
+        birthday: req.body.birthday
     }
     try{
         const collection = client.db("Test").collection("Contacts");
         const result = await collection.insertOne(newUser);
-        console.log(`Insterted contact with _id: ${result.insertedId}`);
+        res.status(200).send(`Insterted contact with _id: ${result.insertedId}`);
 
     } catch(error) {
         console.error("Error: ", error);
@@ -62,11 +62,18 @@ const newContact = async(req, res) => {
 
 const updateContact = ('/:contacts', async(req, res) =>{
     const client = await mongodb.connectDB();
+    const user =     {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        favoriteColor: req.body.favoriteColor,
+        birthday: req.body.birthday
+    }
     try { 
         console.log("Connected to DB");  
         const userID = new ObjectID(req.params.id);
         const collection = client.db("Test").collection("Contacts")
-        const result = await collection.updateOne({_id : userID}, {$set: {lastName: "SkibbitySkip"}});
+        const result = await collection.updateOne({_id : userID}, user);
         res.status(200).send(`Contact ${userID} has been updated! `);
     } catch (error) {
         console.log("Error: ", error);
@@ -94,3 +101,9 @@ const removeContact = ('/:contacts', async (req, res) => {
 })
 
 module.exports = { listContacts, singleContact, newContact, updateContact, removeContact }
+
+
+//Notes: PUT will create a new resource if it can't find the one requested.
+// with PUT you must send ALL data, including the bit you want changed.
+// with PATCH you can send only data that you want to change- can be a single field. 
+// https://www.freecodecamp.org/news/http-request-methods-explained/#:~:text=If%20you%20just%20want%20to,you%20make%20a%20PUT%20request.
