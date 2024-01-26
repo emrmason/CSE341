@@ -1,0 +1,51 @@
+### Contacts list
+GET http://localhost:3000 HTTP/1.1
+
+### Get a single contact (1)
+GET http://localhost:3000/65ac445267f83bcdf258fff6 HTTP/1.1
+
+### Get a single contact (2)
+GET http://localhost:3000/65ac445267f83bcdf258fff7 HTTP/1.1
+
+### Get a single contact (3)
+GET http://localhost:3000/65ac445267f83bcdf258fff9 HTTP/1.1
+
+
+### RENDER Contacts list 
+GET https://cse341-75b7.onrender.com HTTP/1.1
+
+### RENDER Get a single contact (1)
+GET https://cse341-75b7.onrender.com/65ac445267f83bcdf258fff6 HTTP/1.1
+
+### RENDER Get a single contact (2)
+GET https://cse341-75b7.onrender.com/65ac445267f83bcdf258fff7 HTTP/1.1
+
+### RENDER Get a single contact (3)
+GET https://cse341-75b7.onrender.com/65ac445267f83bcdf258fff9 HTTP/1.1
+
+### RENDER CREATE a new contact
+POST https://cse341-75b7.onrender.com/newContact HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Sally",
+    "lastName": "Skellington",
+    "email": "sallyskelly@gmail.com",
+    "favoriteColor": "pink",
+    "birthday": "September 30"
+}
+
+### RENDER UPDATE a single contact
+PUT https://cse341-75b7.onrender.com/updateContact/ HTTP/1.1
+# content-type: application/json
+
+# {
+#     "firstName": "Emily",
+#     "lastName": "FancyPants",
+#     "email": "eschwartz87@live.com",
+#     "favoriteColor": "orange",
+#     "birthday": "January 2"
+# }
+
+### RENDER DELETE a single contact
+DELETE https://cse341-75b7.onrender.com/deleteContact/ HTTP/1.1 
