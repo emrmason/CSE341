@@ -24,19 +24,19 @@ content-type: application/json
 
 
 ### UPDATE a single contact
-PUT http://localhost:3000/updateContact/65ac445267f83bcdf258fff9 HTTP/1.1
-Content-Type: application/json
+PUT http://localhost:3000/updateContact/ HTTP/1.1
+# Content-Type: application/json
 
-{
-    "firstName": "Emily",
-    "lastName": "Schwartz",
-    "email": "emskibbidy@live.com",
-    "favoriteColor": "red",
-    "birthday": "Octember 43"
-}
+# {
+#     "firstName": "Emily",
+#     "lastName": "Schwartz",
+#     "email": "emskibbidy@live.com",
+#     "favoriteColor": "red",
+#     "birthday": "Octember 43"
+# }
 
 ### DELETE a single contact
-DELETE http://localhost:3000/deleteContact/65b442f50764643245a76085 HTTP/1.1
+DELETE http://localhost:3000/deleteContact/ HTTP/1.1
 
 ### RENDER Contacts list 
 GET https://cse341-75b7.onrender.com HTTP/1.1
@@ -63,7 +63,7 @@ content-type: application/json
 }
 
 ### RENDER UPDATE a single contact
-PUT https://cse341-75b7.onrender.com/updateContact/65b44347544444f255e6e0d5 HTTP/1.1
+PUT https://cse341-75b7.onrender.com/updateContact/ HTTP/1.1
 # content-type: application/json
 
 # {
@@ -75,4 +75,4 @@ PUT https://cse341-75b7.onrender.com/updateContact/65b44347544444f255e6e0d5 HTTP
 # }
 
 ### RENDER DELETE a single contact
-DELETE https://cse341-75b7.onrender.com/deleteContact/65b43eaaee7f36c63edf9945 HTTP/1.1 
+DELETE https://cse341-75b7.onrender.com/deleteContact/ HTTP/1.1 
