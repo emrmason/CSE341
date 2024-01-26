@@ -62,22 +62,22 @@ const newContact = async(req, res) => {
 
 const updateContact = ('/:contacts', async(req, res) =>{
     const client = await mongodb.connectDB();
-    // const user =     {
-    //     firstName: req.body.firstName,
-    //     lastName: req.body.lastName,
-    //     email: req.body.email,
-    //     favoriteColor: req.body.favoriteColor,
-    //     birthday: req.body.birthday
-    // }
+    const user =     {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        favoriteColor: req.body.favoriteColor,
+        birthday: req.body.birthday
+    }
     try { 
         // console.log("Connected to DB");  
         const userID = new ObjectID(req.params.id);
         const collection = client.db("Test").collection("Contacts");
-        const filter= { _id: userID };
-        const updateInfo = "skibbidyEm@gmail.com";
-        const update = { $set: { email : updateInfo}};
-        const result = await collection.findOneAndUpdate(filter, update);
-        // const result = await collection.updateOne({_id : userID}, {$set: {user}});
+        // const filter= { _id: userID };
+        // const updateInfo = "skibbidyEm@gmail.com";
+        // const update = { $set: { email : updateInfo}};
+        // const result = await collection.findOneAndUpdate(filter, update);
+        const result = await collection.updateOne({_id : userID}, {$set: {user}});
         res.status(204).send(`Contact ${userID} has been updated! `);
     } catch (error) {
         console.log("Error: ", error);
