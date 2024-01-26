@@ -11,7 +11,7 @@ GET http://localhost:3000/65ac445267f83bcdf258fff7 HTTP/1.1
 GET http://localhost:3000/65ac445267f83bcdf258fff9 HTTP/1.1
 
 ### CREATE a new contact
-POST http://localhost:3000/createContact/newContact HTTP/1.1
+POST http://localhost:3000/newContact HTTP/1.1
 content-type: application/json
 
 {
@@ -36,7 +36,7 @@ Content-Type: application/json
 }
 
 ### DELETE a single contact
-DELETE http://localhost:3000/65b3fa2c1198d1daa6c784a0 HTTP/1.1
+DELETE http://localhost:3000/deleteContact/65b442f50764643245a76085 HTTP/1.1
 
 ### RENDER Contacts list 
 GET https://cse341-75b7.onrender.com HTTP/1.1
@@ -63,7 +63,7 @@ content-type: application/json
 }
 
 ### RENDER UPDATE a single contact
-PUT https://cse341-75b7.onrender.com/updateContact/65b43eaaee7f36c63edf9945 HTTP/1.1
+PUT https://cse341-75b7.onrender.com/updateContact/65b44347544444f255e6e0d5 HTTP/1.1
 content-type: application/json
 
 {

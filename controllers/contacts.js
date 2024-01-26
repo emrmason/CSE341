@@ -78,7 +78,7 @@ const updateContact = ('/:contacts', async(req, res) =>{
         // const update = { $set: { email : updateInfo}};
         // const result = await collection.findOneAndUpdate(filter, update);
         const result = await collection.updateOne({_id : userID}, {$set: {user}});
-        res.status(204).send(`Contact ${userID} has been updated! `);
+        res.status(204).send(result);
     } catch (error) {
         console.log("Error: ", error);
     } 
