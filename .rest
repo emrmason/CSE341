@@ -1,32 +1,57 @@
-### 
+### Contacts list
 GET http://localhost:3000 HTTP/1.1
-###
-GET http://localhost:3000/contacts HTTP/1.1
-###
 
-GET http://localhost:3000/single/65ac445267f83bcdf258fff6 HTTP/1.1
-###
+### Get a single contact (1)
+GET http://localhost:3000/65ac445267f83bcdf258fff6 HTTP/1.1
 
-GET http://localhost:3000/single/65ac445267f83bcdf258fff7 HTTP/1.1
-###
+### Get a single contact (2)
+GET http://localhost:3000/65ac445267f83bcdf258fff7 HTTP/1.1
 
-GET http://localhost:3000/single/65ac445267f83bcdf258fff9 HTTP/1.1
-###
+### Get a single contact (3)
+GET http://localhost:3000/65ac445267f83bcdf258fff9 HTTP/1.1
 
-
-GET https://cse341-75b7.onrender.com HTTP/1.1
-###
-
-GET https://cse341-75b7.onrender.com/65ac445267f83bcdf258fff6 HTTP/1.1
-###
-
-GET https://cse341-75b7.onrender.com/single/65ac445267f83bcdf258fff7 HTTP/1.1
-###
-
-GET https://cse341-75b7.onrender.com/single/65ac445267f83bcdf258fff9 HTTP/1.1
-
-###
+### CREATE a new contact
 POST http://localhost:3000/newContact HTTP/1.1
 
-###
-PUT http://localhost:3000/updateContact HTTP/1.1
+### UPDATE a single contact
+PUT http://localhost:3000/65ac445267f83bcdf258fff5 HTTP/1.1
+
+### DELETE a single contact
+DELETE http://localhost:3000/65b3fa2c1198d1daa6c784a0 HTTP/1.1
+
+### RENDER Contacts list 
+GET https://cse341-75b7.onrender.com HTTP/1.1
+
+### RENDER Get a single contact (1)
+GET https://cse341-75b7.onrender.com/65ac445267f83bcdf258fff6 HTTP/1.1
+
+### RENDER Get a single contact (2)
+GET https://cse341-75b7.onrender.com/65ac445267f83bcdf258fff7 HTTP/1.1
+
+### RENDER Get a single contact (3)
+GET https://cse341-75b7.onrender.com/65ac445267f83bcdf258fff9 HTTP/1.1
+
+### RENDER CREATE a new contact
+POST https://cse341-75b7.onrender.com/newContact HTTP/1.1
+content-type: application/json
+{
+    "firstName": "Sally",
+    "lastName": "Skellington",
+    "email": "sallyskelly@gmail.com",
+    "favoriteColor": "pink",
+    "birthday": "September 30"
+}
+
+### RENDER UPDATE a single contact
+PUT https://cse341-75b7.onrender.com/65ac445267f83bcdf258fff9 HTTP/1.1
+content-type: application/json
+{
+    "firstName": "Emily",
+    "lastName": "FancyPants",
+    "email": "eschwartz87@live.com",
+    "favoriteColor": "orange",
+    "birthday": "January 2"
+}
+
+### RENDER DELETE a single contact
+DELETE https://cse341-75b7.onrender.com/65b4010785a645db11bc20b4 HTTP/1.1 
