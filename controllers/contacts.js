@@ -74,7 +74,7 @@ const updateContact = ('/:contacts', async(req, res) =>{
         const userID = new ObjectID(req.params.id);
         const collection = client.db("Test").collection("Contacts");
         const filter= { _id: userID };
-        const updateInfo = "skibbidyEm@gmail.com";
+        const updateInfo = "skibbidyskelly@gmail.com";
         const update = { $set: { email : updateInfo}};
         const result = await collection.findOneAndUpdate(filter, update);
         // const result = await collection.updateOne({_id : userID}, {$set: {user}});
