@@ -11,7 +11,7 @@
     "http"
   ],
   "paths": {
-    "/": {
+    "/contacts": {
       "get": {
         "description": "",
         "responses": {
@@ -21,17 +21,7 @@
         }
       }
     },
-    "/contacts/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/contacts/{id}": {
+    "/single/{id}": {
       "get": {
         "description": "",
         "parameters": [
@@ -49,7 +39,7 @@
         }
       }
     },
-    "/contacts/newContact": {
+    "/newContact": {
       "post": {
         "description": "",
         "parameters": [
@@ -85,7 +75,7 @@
         }
       }
     },
-    "/contacts/updateContact/{id}": {
+    "/updateContact/{id}": {
       "put": {
         "description": "",
         "parameters": [
@@ -94,6 +84,30 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "favoriteColor": {
+                  "example": "any"
+                },
+                "birthday": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -103,7 +117,7 @@
         }
       }
     },
-    "/contacts/deleteContact/{id}": {
+    "/deleteContact/{id}": {
       "delete": {
         "description": "",
         "parameters": [
