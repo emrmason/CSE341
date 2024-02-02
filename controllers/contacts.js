@@ -19,7 +19,7 @@ const listContacts = async(req, res, next) => {
     }
 }
 
-const singleContact = ('/:contacts', async(req, res, next) => {
+const singleContact = async(req, res, next) => {
     try{
         const userID = new ObjectID(req.params.id);
         const client = await mongodb.connectDB();
@@ -35,7 +35,7 @@ const singleContact = ('/:contacts', async(req, res, next) => {
         console.error(error);
         next(error);
     }    
-});
+};
 
 const newContact = async(req, res) => {
     const client = await mongodb.connectDB();
@@ -60,7 +60,7 @@ const newContact = async(req, res) => {
     }
 }
 
-const updateContact = ('/:contacts', async(req, res) =>{
+const updateContact = async(req, res) =>{
     const client = await mongodb.connectDB();
     // const user =     {
     //     firstName: req.body.firstName,
@@ -86,9 +86,9 @@ const updateContact = ('/:contacts', async(req, res) =>{
         client.close();
         console.log("The way is shut.")
     }
-})
+}
 
-const removeContact = ('/:contacts', async (req, res) => {
+const removeContact = async (req, res) => {
     const client = await mongodb.connectDB();
     console.log("DB Connection established");
     const userID = new ObjectID(req.params.id);
@@ -102,7 +102,7 @@ const removeContact = ('/:contacts', async (req, res) => {
         client.close();
         console.log("Don't let the door hit you...");
     }
-})
+}
 
 module.exports = { listContacts, singleContact, newContact, updateContact, removeContact }
 
