@@ -13,7 +13,15 @@ content-type: application/json
 
 ### UPDATE a single contact (local)
 PUT http://localhost:3000/updateContact/*** HTTP/1.1
+content-type: application/json
 
+{
+    "firstName": "Jack",
+    "lastName": "Skellington",
+    "email": "jayskelly@yahoo.com",
+    "favoriteColor": "burnt orange",
+    "birthday": "October 31"
+}
 
 ### DELETE a single contact (local)
 DELETE http://localhost:3000/deleteContact/*** HTTP/1.1
@@ -33,7 +41,15 @@ content-type: application/json
 
 ### RENDER UPDATE a single contact
 PUT https://cse341-75b7.onrender.com/updateContact/*** HTTP/1.1
+content-type: application/json
 
+{
+    "firstName": "Sally",
+    "lastName": "Skellington",
+    "email": "moonpie@gmail.com",
+    "favoriteColor": "pink",
+    "birthday": "September 30"
+}
 
 ### RENDER DELETE a single contact
 DELETE https://cse341-75b7.onrender.com/deleteContact/*** HTTP/1.1 

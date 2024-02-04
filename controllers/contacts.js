@@ -88,7 +88,7 @@ const updateContact =
 
 const removeContact =
   ("/:contacts",
-  async (req, res) => {
+  async (req, res, next) => {
     const client = await mongodb.connectDB();
     console.log("DB Connection established");
     const userID = new ObjectId(req.params.id);

@@ -13,8 +13,6 @@ app.use(bodyParser.json());
 
 app.use('/', require('./routes/contacts'));
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
 app.use(cors());
 
 app.use((request, response, next) => {
@@ -28,6 +26,7 @@ app.use((request, response, next) => {
         response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
         next();
       });
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.listen(port, ()=> {
         console.log(`Server is running on port ${port}... Nothing to see here, move along.`);
